@@ -13,15 +13,14 @@ jobs:
       
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0'
+          flutter-version: '3.16.9'
           channel: 'stable'
       
-      - run: flutter clean
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build apk
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: wifi-security-guardian
+          name: wifi-security-app
           path: build/app/outputs/flutter-apk/app-release.apk
